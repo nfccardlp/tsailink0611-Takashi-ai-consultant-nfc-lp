@@ -41,6 +41,19 @@
             </div>
         </header>
 
+        <!-- Video Trigger Button Section -->
+        <section class="video-trigger-section">
+            <button id="video-trigger-btn" class="video-trigger-btn">
+                <div class="btn-content">
+                    <span class="function-call">consultant.introduce()</span>
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="btn-comment">
+                    <span class="code-comment">// AIコンサルタント佐々木からのご挨拶</span>
+                </div>
+            </button>
+        </section>
+
         <!-- Services Section -->
         <section class="services">
             <h2 class="section-title">
@@ -123,18 +136,18 @@
 
         <!-- CTA Buttons -->
         <section class="cta-section">
-            <button id="vcard-btn" class="btn btn-primary">
-                <span class="btn-icon">💾</span>
-                連絡先を保存 (vCard)
+            <button id="bookmark-btn" class="btn btn-primary">
+                <span class="btn-icon">📱</span>
+                名刺代わりに保存
             </button>
-            <a href="https://line.me/ti/p/NWGjZAM_AY" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <a href="https://line.me/ti/p/NWGjZAM_AY" target="_blank" rel="noopener noreferrer" class="btn btn-line">
                 <span class="btn-icon">💬</span>
                 LINEで相談する
             </a>
-            <button class="btn btn-outline">
-                <span class="btn-icon">🔗</span>
-                詳しくはこちら（準備中）
-            </button>
+            <a href="#" class="btn btn-outline">
+                <span class="btn-icon">🌐</span>
+                本格的なサイトはこちら（準備中）
+            </a>
         </section>
 
         <!-- Footer -->
@@ -147,6 +160,90 @@
             </div>
         </footer>
     </main>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="video-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="閉じる">
+                <span class="close-icon">✕</span>
+                <span class="close-text">ESC</span>
+            </button>
+            <div class="modal-video-container">
+                <video id="modal-video" class="modal-video" controls playsinline>
+                    <source src="Quick Avatar Video.mp4" type="video/mp4">
+                    お使いのブラウザは動画タグをサポートしていません。
+                </video>
+                <div class="modal-caption">
+                    <span class="code-comment">// AI Consultant Greeting</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bookmark Guide Modal -->
+    <div id="bookmark-modal" class="bookmark-modal">
+        <div class="modal-overlay"></div>
+        <div class="bookmark-modal-content">
+            <button class="bookmark-modal-close" aria-label="閉じる">✕</button>
+            <div class="bookmark-guide">
+                <div class="guide-header">
+                    <span class="guide-icon">📱</span>
+                    <h2 class="guide-title">このページを保存する</h2>
+                </div>
+
+                <div class="guide-section">
+                    <h3 class="guide-subtitle">
+                        <span class="device-icon">📱</span>
+                        iPhoneの方
+                    </h3>
+                    <ol class="guide-steps">
+                        <li>
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>画面下の共有ボタン</strong>をタップ
+                                <div class="step-icon">⬆️ (四角に↑)</div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>「ブックマークに追加」</strong>を選ぶ
+                                <div class="step-icon">⭐</div>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="guide-divider"></div>
+
+                <div class="guide-section">
+                    <h3 class="guide-subtitle">
+                        <span class="device-icon">📱</span>
+                        Androidの方
+                    </h3>
+                    <ol class="guide-steps">
+                        <li>
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>画面右上のメニュー</strong>をタップ
+                                <div class="step-icon">⋮ (3つの点)</div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>「☆」マーク</strong>をタップ
+                                <div class="step-icon">⭐</div>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <button class="guide-close-btn">わかりました</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -81,6 +81,25 @@ function handleVCardDownload() {
 }
 
 /**
+ * Bookmark Guide Modal Functions
+ */
+function openBookmarkGuide() {
+    const modal = document.getElementById('bookmark-modal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeBookmarkGuide() {
+    const modal = document.getElementById('bookmark-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+/**
  * Show feedback message
  * @param {string} message - Message to display
  * @param {string} type - Type of message ('success' or 'error')
@@ -147,14 +166,102 @@ function initScrollAnimations() {
 }
 
 /**
+ * Video Modal Functions
+ */
+function openVideoModal() {
+    const modal = document.getElementById('video-modal');
+    const video = document.getElementById('modal-video');
+
+    if (modal && video) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scroll
+
+        // Play video after modal animation
+        setTimeout(() => {
+            video.play().catch(err => {
+                console.log('Autoplay prevented:', err);
+            });
+        }, 400);
+    }
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('video-modal');
+    const video = document.getElementById('modal-video');
+
+    if (modal && video) {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scroll
+
+        // Pause and reset video
+        video.pause();
+        video.currentTime = 0;
+    }
+}
+
+/**
  * Initialize application
  */
 function init() {
-    // Add vCard download handler
+    // Add vCard download handler (legacy support)
     const vcardBtn = document.getElementById('vcard-btn');
     if (vcardBtn) {
         vcardBtn.addEventListener('click', handleVCardDownload);
     }
+
+    // Add bookmark guide handler
+    const bookmarkBtn = document.getElementById('bookmark-btn');
+    if (bookmarkBtn) {
+        bookmarkBtn.addEventListener('click', openBookmarkGuide);
+    }
+
+    // Add video modal handlers
+    const videoTriggerBtn = document.getElementById('video-trigger-btn');
+    const videoModalCloseBtn = document.querySelector('.modal-close');
+    const videoModalOverlay = document.querySelector('#video-modal .modal-overlay');
+    const videoModal = document.getElementById('video-modal');
+
+    if (videoTriggerBtn) {
+        videoTriggerBtn.addEventListener('click', openVideoModal);
+    }
+
+    if (videoModalCloseBtn) {
+        videoModalCloseBtn.addEventListener('click', closeVideoModal);
+    }
+
+    if (videoModalOverlay) {
+        videoModalOverlay.addEventListener('click', closeVideoModal);
+    }
+
+    // Add bookmark modal handlers
+    const bookmarkModalCloseBtn = document.querySelector('.bookmark-modal-close');
+    const bookmarkModalOverlay = document.querySelector('#bookmark-modal .modal-overlay');
+    const guideCloseBtn = document.querySelector('.guide-close-btn');
+    const bookmarkModal = document.getElementById('bookmark-modal');
+
+    if (bookmarkModalCloseBtn) {
+        bookmarkModalCloseBtn.addEventListener('click', closeBookmarkGuide);
+    }
+
+    if (bookmarkModalOverlay) {
+        bookmarkModalOverlay.addEventListener('click', closeBookmarkGuide);
+    }
+
+    if (guideCloseBtn) {
+        guideCloseBtn.addEventListener('click', closeBookmarkGuide);
+    }
+
+    // Close modals on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            if (videoModal && videoModal.classList.contains('active')) {
+                closeVideoModal();
+            }
+            if (bookmarkModal && bookmarkModal.classList.contains('active')) {
+                closeBookmarkGuide();
+            }
+        }
+    });
 
     // Initialize smooth scroll
     initSmoothScroll();
