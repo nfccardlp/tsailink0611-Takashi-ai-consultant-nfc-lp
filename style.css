@@ -182,15 +182,17 @@ body {
 .video-trigger-section {
     margin: var(--spacing-2xl) 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
     align-items: center;
     gap: var(--spacing-lg);
+    width: 100%;
 }
 
 .video-intro {
     text-align: center;
     max-width: 700px;
     margin-bottom: var(--spacing-md);
+    width: 100%;
 }
 
 .video-title {
