@@ -7,6 +7,143 @@
     box-sizing: border-box;
 }
 
+/* ===================================
+   Hero Section
+   =================================== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    min-height: 600px;
+    overflow: hidden;
+    background: var(--color-black);
+}
+
+.hero-video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 50%,
+        rgba(0, 0, 0, 0.4) 80%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    pointer-events: none;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 clamp(24px, 6vw, 80px);
+    padding-bottom: clamp(100px, 15vh, 160px);
+    z-index: 2;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-title {
+    font-family: var(--font-mono);
+    font-size: clamp(1rem, 3vw, 1.375rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: clamp(24px, 4vh, 48px);
+    right: clamp(24px, 6vw, 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+}
+
+.scroll-text {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.6) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: scroll-pulse 2s ease-in-out infinite;
+}
+
+@keyframes scroll-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scaleY(0.8);
+    }
+}
+
+/* Hero Responsive */
+@media (max-width: 768px) {
+    .hero {
+        height: 100svh;
+        min-height: 500px;
+    }
+    
+    .hero-content {
+        padding-bottom: clamp(80px, 12vh, 120px);
+    }
+    
+    .hero-scroll-indicator {
+        right: 16px;
+        bottom: 20px;
+    }
+    
+    .scroll-line {
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-name {
+        letter-spacing: 0.05em;
+    }
+}
+
 :root {
     /* Color Palette - Monochrome */
     --color-black: #000000;
