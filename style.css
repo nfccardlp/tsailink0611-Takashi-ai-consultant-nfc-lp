@@ -34,11 +34,12 @@
     object-position: center;
 }
 
-/* スマホでは動画全体を表示（左右が切れないように） */
+/* スマホでは動画を少し縮小して左右の切れを軽減 */
 @media (max-width: 768px) {
     .hero-video {
-        object-fit: contain;
+        object-fit: cover;
         object-position: center center;
+        transform: scale(0.75);
     }
     
     .hero-video-wrapper {
