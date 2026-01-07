@@ -34,12 +34,28 @@
     object-position: center;
 }
 
-/* スマホでは動画を少し縮小して左右の切れを軽減 */
+/* 縦動画対応: デスクトップでは中央配置でアスペクト比を保持 */
+@media (min-width: 769px) {
+    .hero-video-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-black);
+    }
+    
+    .hero-video {
+        width: auto;
+        height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+}
+
+/* スマホでは縦動画を全画面表示 */
 @media (max-width: 768px) {
     .hero-video {
         object-fit: cover;
         object-position: center center;
-        transform: scale(0.75);
     }
     
     .hero-video-wrapper {
