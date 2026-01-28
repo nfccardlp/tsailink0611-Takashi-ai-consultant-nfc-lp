@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AIで、伝わるビジュアルを - 画像生成・動画制作 | MICHINORI">
+    <title>AIで、伝わるビジュアルを | MICHINORI</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="michinori-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wave-container">
+        <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,50 Q300,100 600,50 T1200,50 L1200,0 L0,0 Z" class="wave-path"></path>
+        </svg>
+    </div>
+
+    <main class="container detail-page">
+        <nav class="back-nav">
+            <a href="michinori-index.html" class="back-link">← MICHINORI</a>
+        </nav>
+
+        <header class="detail-header">
+            <div class="code-line">
+                <span class="code-comment">// Service 04</span>
+            </div>
+            <h1 class="detail-title">
+                <span class="code-keyword">const</span> create = <span class="code-brace">{</span>
+                <span class="service-description">"AIで、伝わるビジュアルを"</span>
+                <span class="code-brace">}</span>
+            </h1>
+        </header>
+
+        <section class="features-section">
+            <h2 class="section-title">
+                <span class="code-comment">// What I Can Create</span>
+            </h2>
+            <ul class="features-list">
+                <li class="feature-item status-ready">
+                    <span class="check-mark">✓</span>
+                    <div>
+                        <strong>画像生成・スライド制作</strong>
+                        <p class="feature-desc">プレゼン資料・SNS画像・バナーなど</p>
+                    </div>
+                </li>
+                <li class="feature-item status-ready">
+                    <span class="check-mark">✓</span>
+                    <div>
+                        <strong>ショート動画生成（5〜10秒）</strong>
+                        <p class="feature-desc">SNS用・プロモーション用動画</p>
+                    </div>
+                </li>
+                <li class="feature-item status-wip">
+                    <span class="check-mark wip">○</span>
+                    <div>
+                        <strong>本格動画制作（1〜2分）</strong>
+                        <p class="feature-desc">準備中</p>
+                        <span class="status-badge">Coming Soon</span>
+                    </div>
+                </li>
+                <li class="feature-item status-ready">
+                    <span class="check-mark">✓</span>
+                    <div>
+                        <strong>制作方法のレクチャー</strong>
+                        <p class="feature-desc">自分でも作れるようになる</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="tools-section">
+            <h2 class="section-title">
+                <span class="code-comment">// AI Tools</span>
+            </h2>
+            <div class="tech-list">
+                <span class="tech-badge">Midjourney</span>
+                <span class="tech-badge">DALL-E</span>
+                <span class="tech-badge">Runway</span>
+                <span class="tech-badge">Canva</span>
+                <span class="tech-badge">Gamma</span>
+            </div>
+        </section>
+
+        <section class="tagline-section">
+            <p class="detail-tagline">言葉だけでは伝わらない。</p>
+            <p class="detail-tagline">AIで、ビジュアルの力を。</p>
+        </section>
+
+        <section class="cta-section">
+            <a href="https://line.me/ti/p/NWGjZAM_AY" target="_blank" rel="noopener noreferrer" class="btn btn-line">
+                <span class="btn-icon">💬</span>
+                作りたいものを相談
+            </a>
+        </section>
+
+        <nav class="bottom-nav">
+            <a href="michinori-index.html" class="back-link">← トップに戻る</a>
+        </nav>
+
+        <footer class="footer">
+            <div class="footer-brand">MICHINORI</div>
+            <div class="footer-text">
+                &copy; 2025 Takashi Sasaki
+            </div>
+        </footer>
+    </main>
+
+    <style>
+        .feature-desc {
+            font-size: 0.875rem;
+            color: var(--color-gray-600);
+            margin-top: 4px;
+        }
+        
+        .tools-section {
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .status-ready .check-mark {
+            color: var(--color-gray-700);
+        }
+        
+        .status-wip .check-mark {
+            color: var(--color-gray-400);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 2px 8px;
+            font-size: 0.625rem;
+            font-weight: 600;
+            color: var(--color-gray-500);
+            background: var(--color-gray-100);
+            border-radius: var(--radius-lg);
+            letter-spacing: 0.05em;
+        }
+    </style>
+</body>
+</html>
