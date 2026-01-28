@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AIと経営、共に考える - 事業相談・専門家ネットワーク | MICHINORI">
+    <title>AIと経営、共に考える | MICHINORI</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="michinori-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wave-container">
+        <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,50 Q300,100 600,50 T1200,50 L1200,0 L0,0 Z" class="wave-path"></path>
+        </svg>
+    </div>
+
+    <main class="container detail-page">
+        <nav class="back-nav">
+            <a href="michinori-index.html" class="back-link">← MICHINORI</a>
+        </nav>
+
+        <header class="detail-header">
+            <div class="code-line">
+                <span class="code-comment">// Service 05</span>
+            </div>
+            <h1 class="detail-title">
+                <span class="code-keyword">const</span> consult = <span class="code-brace">{</span>
+                <span class="service-description">"AIと経営、共に考える"</span>
+                <span class="code-brace">}</span>
+            </h1>
+        </header>
+
+        <section class="features-section">
+            <h2 class="section-title">
+                <span class="code-comment">// What I Can Support</span>
+            </h2>
+            <ul class="features-list">
+                <li class="feature-item">
+                    <span class="check-mark">◉</span>
+                    <div>
+                        <strong>新規事業・業務改善の相談</strong>
+                        <p class="feature-desc">AIを活用したビジネスアイデアの壁打ち</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <span class="check-mark">◉</span>
+                    <div>
+                        <strong>専門家ネットワーク</strong>
+                        <p class="feature-desc">士業・経営者・専門家との繋がり</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <span class="check-mark">◉</span>
+                    <div>
+                        <strong>助成金・補助金情報</strong>
+                        <p class="feature-desc">活用できる支援制度のご案内</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <span class="check-mark">◉</span>
+                    <div>
+                        <strong>気軽なチャット相談</strong>
+                        <p class="feature-desc">ちょっとした疑問もお気軽に</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="experience-section">
+            <h2 class="section-title">
+                <span class="code-comment">// My Experience</span>
+            </h2>
+            <div class="experience-highlight">
+                <div class="exp-item">
+                    <span class="exp-number">25</span>
+                    <span class="exp-label">年の経営経験</span>
+                </div>
+                <div class="exp-item">
+                    <span class="exp-number">7</span>
+                    <span class="exp-label">店舗の多店舗展開</span>
+                </div>
+                <div class="exp-item">
+                    <span class="exp-number">2000+</span>
+                    <span class="exp-label">時間のAI学習</span>
+                </div>
+            </div>
+            <p class="experience-note">
+                成功も失敗も経験したからこそ、<br>
+                経営者の気持ちがわかります。
+            </p>
+        </section>
+
+        <section class="tagline-section">
+            <p class="detail-tagline">一人で悩まず、</p>
+            <p class="detail-tagline">共に考えましょう。</p>
+        </section>
+
+        <section class="cta-section">
+            <a href="https://line.me/ti/p/NWGjZAM_AY" target="_blank" rel="noopener noreferrer" class="btn btn-line">
+                <span class="btn-icon">💬</span>
+                気軽に話してみる
+            </a>
+        </section>
+
+        <nav class="bottom-nav">
+            <a href="michinori-index.html" class="back-link">← トップに戻る</a>
+        </nav>
+
+        <footer class="footer">
+            <div class="footer-brand">MICHINORI</div>
+            <div class="footer-text">
+                &copy; 2025 Takashi Sasaki
+            </div>
+        </footer>
+    </main>
+
+    <style>
+        .feature-desc {
+            font-size: 0.875rem;
+            color: var(--color-gray-600);
+            margin-top: 4px;
+        }
+        
+        .experience-section {
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .experience-highlight {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            margin: var(--spacing-lg) 0;
+            flex-wrap: wrap;
+        }
+        
+        .exp-item {
+            text-align: center;
+        }
+        
+        .exp-number {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--color-gray-900);
+            line-height: 1;
+        }
+        
+        .exp-label {
+            font-size: 0.75rem;
+            color: var(--color-gray-600);
+        }
+        
+        .experience-note {
+            text-align: center;
+            font-size: 0.9375rem;
+            color: var(--color-gray-700);
+            line-height: 1.8;
+            margin-top: var(--spacing-lg);
+        }
+    </style>
+</body>
+</html>

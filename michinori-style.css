@@ -1,0 +1,870 @@
+/* ============================================
+   MICHINORI - Advanced Styles
+   驚愕のランディングページ
+   ============================================ */
+
+/* ============================================
+   Opening Animation - Enhanced
+   ============================================ */
+.opening {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-black);
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.opening.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.opening-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.opening-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+}
+
+/* AIX伴走パートナー - Giant Outline Background（枠線のみ） */
+.logo-bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-sans);
+    font-size: clamp(1.8rem, 8vw, 5rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.35);
+    text-stroke: 1.5px rgba(255, 255, 255, 0.35);
+    opacity: 0;
+    animation: bgTextFadeIn 1.2s ease forwards;
+    animation-delay: 0.1s;
+    z-index: 0;
+}
+
+@keyframes bgTextFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.logo-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 10vw, 5rem);
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    color: var(--color-white);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: logoFadeIn 1s ease forwards;
+    animation-delay: 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+.logo-line {
+    width: 100px;
+    height: 1px;
+    background: var(--color-white);
+    opacity: 0;
+    transform: scaleX(0);
+    animation: lineExpand 0.6s ease forwards;
+    animation-delay: 1s;
+    position: relative;
+    z-index: 1;
+}
+
+/* AIX伴走パートナー - Subtitle */
+.logo-sub {
+    font-family: var(--font-sans);
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: logoFadeIn 0.8s ease forwards;
+    animation-delay: 1.4s;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes logoFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lineExpand {
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+/* Particles - Enhanced */
+.opening-particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: var(--color-white);
+    border-radius: 50%;
+    opacity: 0;
+    animation: particleFloat 4s ease-in-out infinite;
+}
+
+.particle:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { top: 70%; left: 90%; animation-delay: 0.7s; }
+.particle:nth-child(3) { top: 85%; left: 15%; animation-delay: 1.4s; }
+.particle:nth-child(4) { top: 25%; left: 80%; animation-delay: 2.1s; }
+.particle:nth-child(5) { top: 55%; left: 45%; animation-delay: 2.8s; }
+
+@keyframes particleFloat {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(0) scale(0);
+    }
+    15% {
+        opacity: 0.8;
+        transform: translateY(-10px) scale(1);
+    }
+    85% {
+        opacity: 0.2;
+        transform: translateY(-80px) scale(0.3);
+    }
+}
+
+/* ============================================
+   Parallax Background Text - Scroll-Driven
+   スクロールに連動して動く演出
+   ============================================ */
+.parallax-text {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    color: var(--color-gray-500);
+    opacity: 0;
+    white-space: nowrap;
+    will-change: transform, opacity;
+    transition: opacity 0.6s ease-out, transform 0.8s ease-out;
+}
+
+/* 1つ目: サービスセクション付近 - ふわっと浮かぶ */
+.parallax-text-1 {
+    top: 40%;
+    left: 50%;
+    font-size: clamp(3rem, 12vw, 8rem);
+    letter-spacing: 0.1em;
+    transform: translate(-50%, 100px);
+}
+
+/* 2つ目: プロフィール付近 - 右から左へスライド */
+.parallax-text-2 {
+    top: 55%;
+    right: 0;
+    font-size: clamp(3rem, 12vw, 8rem);
+    letter-spacing: 0.1em;
+    transform: translateX(100%);
+}
+
+/* アクティブ状態（JSで制御） */
+.parallax-text.active {
+    opacity: 0.15;
+}
+
+/* 1つ目: ふわっと浮かぶ（中央に止まる） */
+.parallax-text-1.active {
+    transform: translate(-50%, 0);
+}
+
+/* 2つ目: 右から左へスライド */
+.parallax-text-2.active {
+    transform: translateX(-10%);
+}
+
+/* ============================================
+   Brand Header - Enhanced with AIX伴走パートナー
+   ============================================ */
+.brand-header {
+    padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    color: var(--color-gray-900);
+}
+
+.brand-divider {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    color: var(--color-gray-300);
+    font-weight: 200;
+}
+
+.brand-person {
+    font-family: var(--font-sans);
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    font-weight: 600;
+    color: var(--color-gray-800);
+    letter-spacing: 0.1em;
+}
+
+/* AIX伴走パートナー - Hero下に上品に表示 */
+.brand-aix {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    font-weight: 500;
+    color: var(--color-gray-700);
+    letter-spacing: 0.2em;
+    margin: var(--spacing-md) 0;
+    padding: 0;
+    position: relative;
+}
+
+/* AIXの説明テキスト */
+.brand-aix-desc {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+    letter-spacing: 0.03em;
+    margin-top: var(--spacing-xs);
+}
+
+.brand-tagline {
+    font-family: var(--font-sans);
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
+    color: var(--color-gray-600);
+    letter-spacing: 0.15em;
+    margin-top: var(--spacing-lg);
+    font-weight: 500;
+}
+
+/* ============================================
+   LINE CTA Section - Enhanced
+   ============================================ */
+.line-cta-section {
+    margin: var(--spacing-xl) 0 var(--spacing-3xl);
+    padding: 0 var(--spacing-lg);
+}
+
+.line-cta-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    background: #06C755;
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(6, 199, 85, 0.35);
+    animation: linePulse 3s ease-in-out infinite;
+}
+
+@keyframes linePulse {
+    0%, 100% {
+        box-shadow: 0 8px 30px rgba(6, 199, 85, 0.35);
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 12px 40px rgba(6, 199, 85, 0.5);
+        transform: translateY(-2px);
+    }
+}
+
+.line-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transition: left 0.6s ease;
+}
+
+.line-cta-btn:hover::before {
+    left: 100%;
+}
+
+.line-cta-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 50px rgba(6, 199, 85, 0.5);
+}
+
+.line-cta-btn:active {
+    transform: translateY(-1px) scale(0.99);
+}
+
+.line-cta-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.line-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line-cta-text {
+    font-family: var(--font-sans);
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.line-cta-comment {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* ============================================
+   Services Section - Staggered Layout
+   ============================================ */
+.services {
+    margin: var(--spacing-3xl) 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.services .section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.service-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3xl);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* Staggered Card Layout */
+.service-card {
+    position: relative;
+    overflow: hidden;
+    max-width: 500px;
+    width: 85%;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Left-Right Alternating */
+.service-card:nth-child(odd) {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.service-card:nth-child(even) {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* Card Hover Effects - All Cards */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(0, 0, 0, 0.03) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.6s ease;
+    pointer-events: none;
+}
+
+.service-card:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: var(--color-gray-400);
+}
+
+.service-card .card-link {
+    cursor: pointer;
+}
+
+.card-arrow {
+    position: absolute;
+    right: var(--spacing-lg);
+    bottom: var(--spacing-lg);
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    color: var(--color-gray-400);
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-card:hover .card-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Featured Card Enhancement */
+.featured-card {
+    position: relative;
+    border-width: 2px;
+}
+
+.featured-card::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(135deg, var(--color-gray-300), var(--color-gray-500), var(--color-gray-300));
+    border-radius: calc(var(--radius-md) + 3px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.featured-card:hover::before {
+    opacity: 0.6;
+}
+
+/* ============================================
+   Multi-Direction Animations
+   ============================================ */
+
+/* Base state - hidden */
+.animate-card {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* From Bottom */
+.animate-from-bottom {
+    transform: translateY(80px);
+}
+
+/* From Left */
+.animate-from-left {
+    transform: translateX(-100px);
+}
+
+/* From Right */
+.animate-from-right {
+    transform: translateX(100px);
+}
+
+/* Visible state */
+.animate-card.visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+}
+
+/* Stagger delays */
+.animate-card[data-delay="0"] { transition-delay: 0s; }
+.animate-card[data-delay="1"] { transition-delay: 0.15s; }
+.animate-card[data-delay="2"] { transition-delay: 0.3s; }
+.animate-card[data-delay="3"] { transition-delay: 0.45s; }
+.animate-card[data-delay="4"] { transition-delay: 0.6s; }
+
+/* ============================================
+   Profile Section - Enhanced
+   ============================================ */
+.profile-section {
+    margin: var(--spacing-3xl) 0;
+    padding: var(--spacing-3xl) var(--spacing-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.profile-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-gray-900);
+    color: var(--color-white);
+    border-radius: 50%;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: 4px;
+}
+
+.profile-name-en {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+}
+
+.profile-location {
+    font-size: 0.9375rem;
+    color: var(--color-gray-600);
+}
+
+.profile-story {
+    margin-bottom: var(--spacing-xl);
+}
+
+.story-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) 0;
+    border-left: 2px solid var(--color-gray-200);
+    padding-left: var(--spacing-lg);
+    margin-left: 6px;
+    position: relative;
+}
+
+.story-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: calc(var(--spacing-sm) + 8px);
+    width: 10px;
+    height: 10px;
+    background: var(--color-white);
+    border: 2px solid var(--color-gray-400);
+    border-radius: 50%;
+}
+
+.story-item.highlight::before {
+    border-color: var(--color-gray-700);
+    background: var(--color-gray-700);
+}
+
+.story-item.turning::before {
+    border-color: var(--color-gray-500);
+    background: var(--color-gray-500);
+}
+
+.story-item.current::before {
+    border-color: var(--color-black);
+    background: var(--color-black);
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.story-age {
+    flex-shrink: 0;
+    min-width: 56px;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-gray-700);
+}
+
+.story-text {
+    font-size: 0.9375rem;
+    color: var(--color-gray-700);
+    line-height: 1.6;
+}
+
+.story-item.current .story-text {
+    color: var(--color-black);
+    font-weight: 500;
+}
+
+.profile-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-gray-200);
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-gray-700);
+    background: var(--color-gray-100);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+}
+
+.skill-tag:hover {
+    background: var(--color-gray-900);
+    color: var(--color-white);
+    border-color: var(--color-gray-900);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   CTA Section - Enhanced
+   ============================================ */
+.cta-section {
+    margin: var(--spacing-3xl) 0;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================
+   Footer - Enhanced
+   ============================================ */
+.footer {
+    padding-top: var(--spacing-3xl);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    color: var(--color-gray-700);
+    margin-bottom: var(--spacing-md);
+}
+
+/* ============================================
+   Spacing Variables Extension
+   ============================================ */
+:root {
+    --spacing-3xl: 6rem;
+    --spacing-4xl: 8rem;
+}
+
+/* ============================================
+   Main Content Hidden State
+   ============================================ */
+.main-hidden .hero,
+.main-hidden .wave-container,
+.main-hidden .container,
+.main-hidden .parallax-text {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ============================================
+   Video Trigger Section - Enhanced Spacing
+   ============================================ */
+.video-trigger-section {
+    margin: var(--spacing-3xl) 0;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+    :root {
+        --spacing-3xl: 4rem;
+        --spacing-4xl: 5rem;
+    }
+    
+    .brand-logo {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .brand-divider {
+        display: none;
+    }
+    
+    /* Cards centered on mobile */
+    .service-card {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .service-grid {
+        gap: var(--spacing-2xl);
+        padding: 0 var(--spacing-md);
+    }
+    
+    /* Animations from bottom only on mobile */
+    .animate-from-left,
+    .animate-from-right {
+        transform: translateY(60px);
+    }
+    
+    .line-cta-btn {
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+    
+    .line-cta-text {
+        font-size: 1.25rem;
+    }
+    
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-info {
+        text-align: center;
+    }
+    
+    /* Parallax text smaller on mobile */
+    .parallax-text {
+        font-size: clamp(2rem, 9vw, 3.5rem) !important;
+    }
+    
+    .parallax-text.active {
+        opacity: 0.12;
+    }
+    
+    .brand-aix {
+        font-size: clamp(1rem, 3.5vw, 1.25rem);
+    }
+    
+    .brand-aix-desc {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --spacing-3xl: 3rem;
+    }
+    
+    .logo-main {
+        font-size: 2rem;
+        letter-spacing: 0.2em;
+    }
+    
+    .logo-sub {
+        font-size: 0.9375rem;
+        letter-spacing: 0.15em;
+    }
+    
+    .brand-name {
+        font-size: 1.75rem;
+    }
+    
+    .parallax-text {
+        font-size: clamp(1.5rem, 7vw, 2.5rem) !important;
+    }
+    
+    .parallax-text.active {
+        opacity: 0.1;
+    }
+}
+
+/* ============================================
+   Smooth Scroll Behavior
+   ============================================ */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============================================
+   Selection Style
+   ============================================ */
+::selection {
+    background: var(--color-gray-900);
+    color: var(--color-white);
+}

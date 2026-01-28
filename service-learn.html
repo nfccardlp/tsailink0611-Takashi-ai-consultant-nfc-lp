@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AIを、自分で使えるように - AI活用教育・内製化サポート | MICHINORI">
+    <title>AIを、自分で使えるように | MICHINORI</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="michinori-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wave-container">
+        <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,50 Q300,100 600,50 T1200,50 L1200,0 L0,0 Z" class="wave-path"></path>
+        </svg>
+    </div>
+
+    <main class="container detail-page">
+        <nav class="back-nav">
+            <a href="michinori-index.html" class="back-link">← MICHINORI</a>
+        </nav>
+
+        <header class="detail-header">
+            <div class="code-line">
+                <span class="code-comment">// Service 03</span>
+            </div>
+            <h1 class="detail-title">
+                <span class="code-keyword">const</span> learn = <span class="code-brace">{</span>
+                <span class="service-description">"AIを、自分で使えるように"</span>
+                <span class="code-brace">}</span>
+            </h1>
+        </header>
+
+        <section class="features-section">
+            <h2 class="section-title">
+                <span class="code-comment">// What You'll Learn</span>
+            </h2>
+            <ul class="features-list">
+                <li class="feature-item">
+                    <span class="check-mark">◉</span>
+                    <div>
+                        <strong>AIツール活用</strong>
+                        <p class="feature-desc">議事録・スライド・Excel作業の効率化</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <span class="check-mark">◉</span>
+                    <div>
+                        <strong>プロンプトの考え方</strong>
+                        <p class="feature-desc">AIから良い回答を引き出すコツ</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <span class="check-mark">◉</span>
+                    <div>
+                        <strong>内製化サポート</strong>
+                        <p class="feature-desc">自社でAIを活用できる体制づくり</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <span class="check-mark">◉</span>
+                    <div>
+                        <strong>最新AI情報の共有</strong>
+                        <p class="feature-desc">日々進化するAIの最新動向</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="approach-section">
+            <h2 class="section-title">
+                <span class="code-comment">// Approach</span>
+            </h2>
+            <div class="approach-cards">
+                <div class="approach-card">
+                    <span class="approach-icon">🎯</span>
+                    <h3>実践重視</h3>
+                    <p>明日から使える具体的なスキル</p>
+                </div>
+                <div class="approach-card">
+                    <span class="approach-icon">👤</span>
+                    <h3>個別対応</h3>
+                    <p>あなたの業務に合わせた内容</p>
+                </div>
+                <div class="approach-card">
+                    <span class="approach-icon">🔄</span>
+                    <h3>継続サポート</h3>
+                    <p>学んだ後も相談できる関係</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tagline-section">
+            <p class="detail-tagline">「AIを使いこなしたい」</p>
+            <p class="detail-tagline">その第一歩を、一緒に。</p>
+        </section>
+
+        <section class="cta-section">
+            <a href="https://line.me/ti/p/NWGjZAM_AY" target="_blank" rel="noopener noreferrer" class="btn btn-line">
+                <span class="btn-icon">💬</span>
+                学び方を相談する
+            </a>
+        </section>
+
+        <nav class="bottom-nav">
+            <a href="michinori-index.html" class="back-link">← トップに戻る</a>
+        </nav>
+
+        <footer class="footer">
+            <div class="footer-brand">MICHINORI</div>
+            <div class="footer-text">
+                &copy; 2025 Takashi Sasaki
+            </div>
+        </footer>
+    </main>
+
+    <style>
+        .feature-desc {
+            font-size: 0.875rem;
+            color: var(--color-gray-600);
+            margin-top: 4px;
+        }
+        
+        .approach-section {
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .approach-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .approach-card {
+            padding: var(--spacing-lg);
+            background: var(--color-white);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+        
+        .approach-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .approach-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .approach-card p {
+            font-size: 0.8125rem;
+            color: var(--color-gray-600);
+        }
+    </style>
+</body>
+</html>
