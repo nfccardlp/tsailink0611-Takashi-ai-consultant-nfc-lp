@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="業務効率化 - AIで日常業務を自動化・効率化 | MICHINORI">
+    <title>業務効率化 | MICHINORI</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="michinori-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wave-container">
+        <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,50 Q300,100 600,50 T1200,50 L1200,0 L0,0 Z" class="wave-path"></path>
+        </svg>
+    </div>
+
+    <main class="container detail-page">
+        <nav class="back-nav">
+            <a href="index.html" class="back-link">← MICHINORI</a>
+        </nav>
+
+        <header class="detail-header">
+            <div class="code-line">
+                <span class="code-comment">// AIX Reskilling 01</span>
+            </div>
+            <h1 class="detail-title">
+                <span class="code-keyword">const</span> efficiency = <span class="code-brace">{</span>
+                <span class="service-description">"業務効率化"</span>
+                <span class="code-brace">}</span>
+            </h1>
+        </header>
+
+        <section class="intro-section">
+            <p class="intro-text">
+                日々の業務に潜む「時間泥棒」を、AIで退治する。<br>
+                資料作成、メール対応、データ入力...反復作業をAIが担当し、<br>
+                あなたは本来の価値ある仕事に集中できます。
+            </p>
+        </section>
+
+        <section class="features-section">
+            <h2 class="section-title">
+                <span class="code-comment">// What We Automate</span>
+            </h2>
+            <ul class="features-list">
+                <li class="feature-item">
+                    <span class="check-mark">◉</span>
+                    <div>
+                        <strong>資料・レポート作成</strong>
+                        <p class="feature-desc">議事録、報告書、提案書をAIが下書き</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <span class="check-mark">◉</span>
+                    <div>
+                        <strong>メール・コミュニケーション</strong>
+                        <p class="feature-desc">定型メールの自動生成、返信文の提案</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <span class="check-mark">◉</span>
+                    <div>
+                        <strong>データ入力・整理</strong>
+                        <p class="feature-desc">Excelやスプレッドシートの自動処理</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <span class="check-mark">◉</span>
+                    <div>
+                        <strong>情報収集・リサーチ</strong>
+                        <p class="feature-desc">競合調査、市場分析をAIがサポート</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="approach-section">
+            <h2 class="section-title">
+                <span class="code-comment">// Expected Results</span>
+            </h2>
+            <div class="approach-cards">
+                <div class="approach-card">
+                    <span class="approach-icon">⏱️</span>
+                    <h3>時間削減</h3>
+                    <p>反復作業を最大70%削減</p>
+                </div>
+                <div class="approach-card">
+                    <span class="approach-icon">🎯</span>
+                    <h3>ミス軽減</h3>
+                    <p>人的エラーの大幅削減</p>
+                </div>
+                <div class="approach-card">
+                    <span class="approach-icon">💡</span>
+                    <h3>創造時間</h3>
+                    <p>本来の仕事に集中できる</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tagline-section">
+            <p class="detail-tagline">「やらなきゃいけない」から</p>
+            <p class="detail-tagline">「やりたい仕事」へ。</p>
+        </section>
+
+        <section class="cta-section">
+            <a href="https://line.me/ti/p/NWGjZAM_AY" target="_blank" rel="noopener noreferrer" class="btn btn-line">
+                <span class="btn-icon">💬</span>
+                効率化を相談する
+            </a>
+        </section>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="back-link">← トップに戻る</a>
+        </nav>
+
+        <footer class="footer">
+            <div class="footer-brand">MICHINORI</div>
+            <div class="footer-text">
+                &copy; 2025 Takashi Sasaki
+            </div>
+        </footer>
+    </main>
+
+    <style>
+        .intro-section {
+            margin: var(--spacing-xl) 0;
+            padding: var(--spacing-lg);
+            background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--color-accent);
+        }
+        
+        .intro-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--color-gray-700);
+        }
+        
+        .feature-desc {
+            font-size: 0.875rem;
+            color: var(--color-gray-600);
+            margin-top: 4px;
+        }
+        
+        .approach-section {
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .approach-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .approach-card {
+            padding: var(--spacing-lg);
+            background: var(--color-white);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+        
+        .approach-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .approach-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .approach-card p {
+            font-size: 0.8125rem;
+            color: var(--color-gray-600);
+        }
+    </style>
+</body>
+</html>

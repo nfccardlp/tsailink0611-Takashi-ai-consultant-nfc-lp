@@ -868,3 +868,217 @@ html {
     background: var(--color-gray-900);
     color: var(--color-white);
 }
+
+/* ============================================
+   Main Service Section - 法人AIリスキリング
+   ============================================ */
+.main-service-section {
+    margin: var(--spacing-2xl) 0;
+    padding: 0 var(--spacing-md);
+}
+
+.main-service-card {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.main-service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255, 150, 0, 0.08) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.main-service-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #ffd700, #ff9500, #ffd700);
+    border-radius: calc(var(--radius-lg) + 2px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.main-service-card:hover::after {
+    opacity: 1;
+}
+
+.main-service-link {
+    display: block;
+    padding: var(--spacing-2xl);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    z-index: 1;
+}
+
+.main-service-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #ffd700, #ffb700);
+    color: #1a1a2e;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.main-service-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.main-service-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: var(--spacing-xs);
+    letter-spacing: 0.02em;
+}
+
+.main-service-subtitle {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.main-service-subsidy {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.subsidy-highlight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-sm);
+}
+
+.subsidy-item-inline {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+}
+
+.subsidy-number-sm {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffd700;
+}
+
+.subsidy-unit-sm {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffd700;
+    margin-right: 4px;
+}
+
+.subsidy-label-sm {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.subsidy-plus-sm {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.subsidy-badge-sm {
+    display: inline-block;
+    font-size: 0.6875rem;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 4px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+}
+
+.main-service-message {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.main-service-cta {
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffd700;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.main-service-card:hover .main-service-cta {
+    letter-spacing: 0.05em;
+}
+
+/* Pulse animation for the card */
+@keyframes subtleGlow {
+    0%, 100% {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 215, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 50px rgba(255, 215, 0, 0.2);
+    }
+}
+
+.main-service-card {
+    animation: subtleGlow 3s ease-in-out infinite;
+}
+
+.main-service-card:hover {
+    transform: translateY(-5px);
+    animation: none;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4), 0 0 60px rgba(255, 215, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .main-service-section {
+        margin: var(--spacing-xl) 0;
+    }
+    
+    .main-service-link {
+        padding: var(--spacing-xl);
+    }
+    
+    .main-service-highlights {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .highlight-divider {
+        transform: rotate(90deg);
+    }
+}
+
+/* ============================================
+   Section Subtitle (kept for potential reuse)
+   ============================================ */
+.section-subtitle {
+    text-align: center;
+    font-size: 0.9375rem;
+    color: var(--color-gray-600);
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+    letter-spacing: 0.02em;
+}
