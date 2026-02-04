@@ -924,6 +924,23 @@ html {
     z-index: 1;
 }
 
+.coming-soon-tag {
+    position: absolute;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 6px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    z-index: 2;
+}
+
 .main-service-badge {
     display: inline-block;
     background: linear-gradient(90deg, #ffd700, #ffb700);
